@@ -33,6 +33,12 @@ export default function Home() {
         dangerouslySetInnerHTML={{
           __html: `
             window.wxOConfiguration = {
+
+              branding: {
+                primaryColor: "#000000",
+                secondaryColor: "#03055B",
+                name: "Monday Assistant",
+              }
               orchestrationID: "f7cab0539e664661bd14fe80c5586549_e8e14bc5-0b34-46ba-ae63-c8c7283f762a",
               hostURL: "https://au-syd.watson-orchestrate.cloud.ibm.com",
               rootElementID: "watson-chat-root",
