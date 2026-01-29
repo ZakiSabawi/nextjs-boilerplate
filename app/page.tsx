@@ -24,18 +24,18 @@ export default function Home() {
       </main>
 
       {/* Watson Orchestrate Chat Widget Container */}
-      <div id="root"></div>
+      <div id="watson-chat-root"></div>
 
       {/* Watson Orchestrate Configuration and Loader Script */}
       <Script
         id="watson-orchestrate-config"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `
             window.wxOConfiguration = {
               orchestrationID: "f7cab0539e664661bd14fe80c5586549_e8e14bc5-0b34-46ba-ae63-c8c7283f762a",
               hostURL: "https://au-syd.watson-orchestrate.cloud.ibm.com",
-              rootElementID: "root",
+              rootElementID: "watson-chat-root",
               deploymentPlatform: "ibmcloud",
               crn: "crn:v1:bluemix:public:watsonx-orchestrate:au-syd:a/f7cab0539e664661bd14fe80c5586549:e8e14bc5-0b34-46ba-ae63-c8c7283f762a::",
               chatOptions: {
@@ -47,10 +47,12 @@ export default function Home() {
               const script = document.createElement('script');
               script.src = window.wxOConfiguration.hostURL + '/wxochat/wxoLoader.js?embed=true';
               script.addEventListener('load', function () {
-                wxoLoader.init();
+                if (window.wxoLoader) {
+                  wxoLoader.init();
+                }
               });
               document.head.appendChild(script);
-            }, 0);
+            }, 1000);
           `,
         }}
       />
