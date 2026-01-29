@@ -33,12 +33,6 @@ export default function Home() {
         dangerouslySetInnerHTML={{
           __html: `
             window.wxOConfiguration = {
-
-              branding: {
-                primaryColor: "#000000",
-                secondaryColor: "#03055B",
-                name: "Monday Assistant",
-              }
               orchestrationID: "f7cab0539e664661bd14fe80c5586549_e8e14bc5-0b34-46ba-ae63-c8c7283f762a",
               hostURL: "https://au-syd.watson-orchestrate.cloud.ibm.com",
               rootElementID: "watson-chat-root",
@@ -47,6 +41,11 @@ export default function Home() {
               chatOptions: {
                 agentId: "856265af-1817-4385-87c4-5cf36e75fd72",
                 agentEnvironmentId: "5e2d335e-0213-427c-be85-6326c9e3742e", 
+              },
+              branding: {
+                primaryColor: "#000000",
+                secondaryColor: "#03055B",
+                name: "Monday Assistant",
               }
             };
             setTimeout(function () {
