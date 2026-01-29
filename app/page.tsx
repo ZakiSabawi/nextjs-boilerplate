@@ -39,7 +39,8 @@ export default function Home() {
               deploymentPlatform: "ibmcloud",
               crn: "crn:v1:bluemix:public:watsonx-orchestrate:au-syd:a/f7cab0539e664661bd14fe80c5586549:e8e14bc5-0b34-46ba-ae63-c8c7283f762a::",
               chatOptions: {
-                agentId: "856265af-1817-4385-87c4-5cf36e75fd72", 
+                agentId: "856265af-1817-4385-87c4-5cf36e75fd72",
+                agentEnvironmentId: "5e2d335e-0213-427c-be85-6326c9e3742e", 
               }
             };
             setTimeout(function () {
